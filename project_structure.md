@@ -52,7 +52,7 @@ parity/
 │   │   └── safetune.py
 │   ├── run/                      # runner.py (resumable, idempotent), conditions.py
 │   ├── label/                    # rules.py, judge.py, human.py
-│   ├── metrics/                  # irg.py, thc.py, corr.py, qpg.py
+│   ├── metrics/                  # irg.py, thc.py, corr.py, qpg.py, pipeline.py
 │   ├── stats/                    # bootstrap.py, mcnemar.py
 │   ├── report/                   # tables.py, figures.py
 │   └── publish/                  # hf.py
