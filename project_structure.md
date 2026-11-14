@@ -35,7 +35,7 @@ parity/
 │
 ├── data/
 │   ├── seeds/                    # hand-written neutral and harmful templates (YAML), human-authored
-│   ├── pilot/                    # ~50 pairs for gate G1, never part of the benchmark
+│   ├── pilot/                    # ~50 pairs for gate G1, never part of the benchmark (pilot_templates.yaml, pilot_pairs.jsonl)
 │   ├── build/<ver>/              # generated, not frozen (gitignored if large)
 │   ├── review/                   # human spot-check CSVs
 │   └── frozen/<ver>/             # immutable benchmark + CHECKSUMS.txt. Never edit.
@@ -64,7 +64,8 @@ parity/
 │   ├── test_metrics.py           # hand-computed cases
 │   ├── test_stats.py
 │   ├── test_adapters_contract.py # 5-prompt fixtures per adapter
-│   └── test_golden_analyze.py
+│   ├── test_golden_analyze.py
+│   └── test_pilot_data.py        # pilot pair-diff property tests (R-102)
 │
 ├── notebooks/                    # Colab entrypoints that call the CLI, no logic of their own
 ├── spaces/parity-explorer/       # Gradio app, reads precomputed parquet only

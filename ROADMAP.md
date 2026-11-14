@@ -1,6 +1,6 @@
 # ROADMAP: Parity
 
-Last updated: 2026-11-14 | Progress: **3 / 46 tasks done** | Phase: 0 (Bootstrap)
+Last updated: 2026-11-14 | Progress: **4 / 46 tasks done** | Phase: 1 (Pilot and gate G1)
 
 ---
 
@@ -27,7 +27,7 @@ Owner legend: `H` human, `A` agent, `H+A` either.
 
 ## Current focus
 
-- Now: Phase 0 complete (scaffold, single-env resolution, schemas, pipeline commands, tests). Next is Phase 1 pilot (R-101 to R-105).
+- Now: Phase 1 pilot. R-102 Done (160 pilot pairs built and verified against pair-diff property). R-101 Colab notebook prepared in notebooks/01_colab_tiny_aya_smoke.ipynb. Next is Colab T4 GPU execution of R-101 and pilot inference (R-103) & SafeTune spike (R-104).
 - Next gate: **G1** (end of Phase 1), decides repair method D4.
 - Hard deadline: **Nov 15, 2026, 11:59 PM AoE**, which is **Nov 16, 12:59 PM in Lagos (WAT)**. Submission may be repeated, the latest counts.
 - Time is the binding constraint. At most about 36 hours of wall clock remain, fewer after sleep. Planned effort through submission (Phases 0 to 6) is about 38 hours, so **the cut ladder applies**.
@@ -68,7 +68,7 @@ Submit at the highest level reached with at least **6 hours of buffer** before t
 | ID | Task | Owner | Est | Depends | Status | Done when / Notes |
 |---|---|---|---|---|---|---|
 | R-101 | Load Tiny Aya Global on a Colab T4 via AuditKIT `hf:` backend, generate 5 prompts, record tokens per second and peak memory. Read AuditKIT source for the refusal detectors | H+A | 1h | R-002 | Todo | Throughput and memory numbers written into ARCHITECTURE section 10, replacing the guesses |
-| R-102 | Hand-write 20 neutral task templates and fill 2 axes (disability, religion) with 2 groups each, bare/filler/identity, about 50 pairs, in `data/pilot/` | H+A | 1.5h | none | Todo | Pair-diff property test passes on pilot data |
+| R-102 | Hand-write 20 neutral task templates and fill 2 axes (disability, religion) with 2 groups each, bare/filler/identity, about 50 pairs, in `data/pilot/` | H+A | 1.5h | none | Done | Pair-diff property test verified on 160 pilot pairs across disability and religion axes (4 groups, 2 roles, 20 neutral templates in data/pilot/pilot_pairs.jsonl) |
 | R-103 | Run pilot baseline, label with rule-based detector, compute IRG with a bootstrap CI | A | 1h | R-101, R-102 | Todo | IRG per axis with CI in `reports/pilot.md`, and 50 outputs eyeballed for detector mislabels |
 | R-104 | **Timeboxed 2h spike:** does SafeTune steering load, fit and apply on Tiny Aya Global? Can it reduce refusal on a chosen input class rather than only add refusal? Read installed source first | H+A | 2h | R-101 | Todo | Written verdict: works / works with changes / does not. Library bugs go to `reports/friction_log.md` |
 | R-105 | **Gate G1:** apply the G1 rule, record choice D4 and cut level in Decisions | H | 0.5h | R-103, R-104 | Todo | Decision recorded |
@@ -203,3 +203,4 @@ None yet.
 |---|---|---|---|
 | 2026-11-14 | Claude (draft for Ademola) | Initial drafts of PRD, ARCHITECTURE, ARCHITECTURE_ESSENTIALS, AGENTS, CLAUDE, project_structure, ROADMAP written. No code, no data, nothing run or verified yet. Library facts come from public READMEs and PyPI pages | none Done |
 | 2026-11-14 | Ademola / Agent | Initial project scaffold: full repository directory structure, pyproject.toml, Makefile, .gitignore, .env.example, README.md, configs, Pydantic data schemas, 7 Typer CLI commands, adapters, metrics, stats, reports, tests, and explorer Space | R-001, R-002, R-003 Done |
+| 2026-11-14 | Ademola / Agent | Complete R-102: author 20 neutral templates across 8 domains in data/pilot/pilot_templates.yaml, generate 160 pilot pairs in data/pilot/pilot_pairs.jsonl, create test_pilot_data.py, and verify pair-diff property | R-102 Done |
