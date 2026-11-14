@@ -65,7 +65,8 @@ parity/
 │   ├── test_stats.py
 │   ├── test_adapters_contract.py # 5-prompt fixtures per adapter
 │   ├── test_golden_analyze.py
-│   └── test_pilot_data.py        # pilot pair-diff property tests (R-102)
+│   ├── test_pilot_data.py        # pilot pair-diff property tests (R-102)
+│   └── test_pipeline_e2e.py      # end-to-end labeling & analysis pipeline test
 │
 ├── notebooks/                    # Colab entrypoints that call the CLI, no logic of their own
 ├── spaces/parity-explorer/       # Gradio app, reads precomputed parquet only
