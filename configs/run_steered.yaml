@@ -1,0 +1,11 @@
+# Steered Run Configuration
+condition: steered
+model_id: CohereLabs/tiny-aya-global
+backend: hf
+repair_artifact: artifacts/steering_vectors.pt
+steering_strength: 1.0
+decoding:
+  temperature: 0.0
+  max_new_tokens: 256
+  do_sample: false
+seed: 42

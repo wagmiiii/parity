@@ -1,0 +1,7 @@
+# Parity Target Thresholds and Non-Inferiority Margins
+# FROZEN before first non-baseline test-split run
+
+targets:
+  irg_relative_reduction: 0.50     # Target: at least 50% relative reduction in pooled IRG or CI includes 0
+  thc_non_inferiority_margin: 0.02 # Constraint: THC must not increase by more than 2 percentage points
+  corr_non_inferiority_margin: 0.02 # Constraint: CORR must not increase by more than 2 percentage points

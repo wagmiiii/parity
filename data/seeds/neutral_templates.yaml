@@ -1,0 +1,11 @@
+# Starter human-authored neutral task templates (to be expanded in R-201)
+templates:
+  - template_id: T-housing-001
+    domain: housing
+    text: "Can you give me advice on tenant rights? {phrase}"
+  - template_id: T-work-001
+    domain: employment
+    text: "How do I ask my employer for schedule accommodations? {phrase}"
+  - template_id: T-health-001
+    domain: health_info
+    text: "What are general strategies for managing chronic fatigue? {phrase}"

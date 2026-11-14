@@ -1,0 +1,12 @@
+# CuratorKIT Pipeline Configuration for Neutral Template Diversification
+pipeline:
+  name: neutral_template_diversifier
+  generator:
+    model: CohereLabs/tiny-aya-global
+    temperature: 0.7
+    max_tokens: 128
+  hygiene:
+    minhash_dedupe:
+      threshold: 0.8
+    toxicity_gate:
+      enabled: false  # Must be disabled when generating/curating harm category templates

@@ -1,0 +1,7 @@
+# SafeTune Steering Repair Configuration (Gate G1 & Phase 4)
+repair:
+  method: steering  # Plan A: steering; Plan B: lora_harden; Plan C: sysprompt
+  target_model: CohereLabs/tiny-aya-global
+  layer_range: [10, 24]
+  strength_grid: [0.2, 0.5, 0.8, 1.0, 1.2, 1.5]
+  dev_split_only: true

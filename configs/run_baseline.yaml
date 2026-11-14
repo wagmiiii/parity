@@ -1,0 +1,9 @@
+# Baseline Run Configuration
+condition: baseline
+model_id: CohereLabs/tiny-aya-global
+backend: hf
+decoding:
+  temperature: 0.0
+  max_new_tokens: 256
+  do_sample: false
+seed: 42
